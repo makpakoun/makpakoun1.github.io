@@ -5,90 +5,130 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-font-family:'Poppins',sans-serif;
+font-family:'Inter',sans-serif;
 margin:0;
-background:#f4f6fb;
-color:#333;
+background:#f7f8fc;
+color:#1f2937;
 }
 
 /* NAVBAR */
 
 nav{
-background:white;
-padding:15px;
-text-align:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
 position:sticky;
 top:0;
+background:white;
+display:flex;
+justify-content:center;
+gap:30px;
+padding:18px;
+box-shadow:0 2px 15px rgba(0,0,0,0.06);
+z-index:100;
 }
 
 nav a{
-margin:0 15px;
 text-decoration:none;
-color:#444;
-font-weight:500;
+color:#374151;
+font-weight:600;
 }
 
-/* HEADER */
+/* HERO */
 
 header{
-background:linear-gradient(135deg,#4f46e5,#9333ea);
-color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:90px 20px;
+background:linear-gradient(135deg,#6366f1,#a855f7);
+color:white;
+padding:100px 20px;
+animation:fadeIn 1.2s ease;
 }
 
 header h1{
-font-size:40px;
-margin:0;
+font-size:42px;
+margin:10px 0 5px 0;
+font-weight:800;
 }
 
-/* SECTIONS */
+header p{
+font-size:18px;
+opacity:0.9;
+margin-bottom:20px;
+}
+
+/* HERO IMAGE */
+
+.header-img{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+margin-top:15px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* LAYOUT */
 
 .container{
-max-width:950px;
+max-width:1000px;
 margin:auto;
-padding:20px;
+padding:30px 20px;
 }
 
 section{
 background:white;
-margin:25px 0;
-padding:30px;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
+margin:30px 0;
+padding:35px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 /* SKILLS */
 
 .skills span{
 background:#eef2ff;
-padding:8px 14px;
+padding:10px 16px;
 margin:6px;
 display:inline-block;
-border-radius:20px;
+border-radius:30px;
+font-size:14px;
+font-weight:500;
 }
 
-/* PROJECTS */
+/* PROJECT CARDS */
 
 .project{
-margin-bottom:30px;
+margin-bottom:35px;
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-8px);
 }
 
 .project img{
 width:100%;
 max-width:500px;
-height:auto;
-border-radius:10px;
-margin-top:10px;
+border-radius:12px;
 display:block;
-margin-left:auto;
-margin-right:auto;
+margin:15px auto;
 }
 
 /* IMAGE GRID */
@@ -100,39 +140,45 @@ gap:15px;
 margin-top:15px;
 }
 
-.image-grid img{
-width:100%;
-border-radius:10px;
-}
-
 /* CONTACT FORM */
 
 input, textarea{
 width:100%;
-padding:12px;
+padding:14px;
 margin:10px 0;
-border-radius:8px;
-border:1px solid #ddd;
-font-family:'Poppins';
+border-radius:10px;
+border:1px solid #e5e7eb;
+font-family:'Inter';
 }
 
 button{
-background:#4f46e5;
+background:linear-gradient(135deg,#6366f1,#a855f7);
 color:white;
 border:none;
-padding:12px 20px;
-border-radius:8px;
+padding:14px 22px;
+border-radius:10px;
+font-weight:600;
 cursor:pointer;
 }
 
 button:hover{
-background:#3730a3;
+opacity:0.9;
 }
 
 footer{
 text-align:center;
-padding:30px;
-color:#777;
+padding:40px;
+color:#6b7280;
+}
+
+/* RESPONSIVE HERO IMAGE */
+
+@media(max-width:600px){
+.header-img{
+width:120px;
+height:120px;
+margin-top:10px;
+}
 }
 
 </style>
@@ -147,21 +193,29 @@ color:#777;
 </nav>
 
 <header>
+
 <h1>Mirabelle Akpakoun</h1>
-<p>MIS Graduate Student | Systems Analyst | Agile & Data Projects</p>
+<p>MIS Graduate Student • Systems Analyst • Agile & Data Projects</p>
+
+<img src="mira.jpg" alt="Mirabelle Akpakoun" class="header-img">
+
 </header>
 
 <div class="container">
 
 <section>
+
 <h2>About Me</h2>
 <p>
-MBA/MIS dual-degree student focused on systems analysis, database design,
-Agile development, and building data-driven technology solutions that improve workflows.
+MBA/MIS dual-degree student passionate about systems analysis, database design,
+Agile development, and building structured technology solutions that improve workflows
+and support data-driven decision-making.
 </p>
+
 </section>
 
 <section>
+
 <h2>Skills</h2>
 
 <div class="skills">
@@ -183,31 +237,26 @@ Agile development, and building data-driven technology solutions that improve wo
 <h2>Projects</h2>
 
 <div class="project">
-
 <h3>Delicious Bites Bakery Website</h3>
-
-<img src="bakery.jpg">
-
+<img src="bakery.jpg" alt="Delicious Bites Bakery Website">
 <p>
-Python Django e-commerce application developed using Agile methodologies
+Python Django e-commerce web application built using Agile methodologies
 and object-oriented design.
 </p>
-
 </div>
 
 <div class="project">
-
 <h3>Air Force Training Tracking Database</h3>
 
 <div class="image-grid">
-<img src="database1.jpg">
-<img src="database2.jpg">
-<img src="database3.jpg">
+<img src="database1.jpg" alt="Database Screenshot 1">
+<img src="database2.jpg" alt="Database Screenshot 2">
+<img src="database3.jpg" alt="Database Screenshot 3">
 </div>
 
 <p>
-Microsoft Access database replacing paper training tracking.
-Designed ERD models, GUI workflows, and reporting features.
+Microsoft Access system replacing manual training tracking workflows.
+Designed ERD models, GUI processes, and reporting features.
 </p>
 
 </div>
@@ -223,11 +272,8 @@ Designed ERD models, GUI workflows, and reporting features.
 <form action="https://formsubmit.co/mirabelleakp@gmail.com" method="POST">
 
 <input type="text" name="name" placeholder="Your Name" required>
-
 <input type="email" name="email" placeholder="Your Email" required>
-
 <textarea name="message" placeholder="Your Message" required></textarea>
-
 <button type="submit">Send Message</button>
 
 </form>
@@ -237,9 +283,7 @@ Designed ERD models, GUI workflows, and reporting features.
 </div>
 
 <footer>
-
 © Mirabelle Akpakoun 2026
-
 </footer>
 
 </body>
